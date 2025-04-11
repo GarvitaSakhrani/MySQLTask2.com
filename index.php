@@ -1,4 +1,5 @@
 <?php
+//Condition to verify if query parameter is passed within the URL, if true then redirects it to query.php file.
 if(isset($_GET['q']) && $_GET['q'] === 'query'){
   header("Location: query.php");
   exit;
@@ -12,9 +13,11 @@ if(isset($_GET['q']) && $_GET['q'] === 'query'){
   <title>Mysql Task2</title>
 </head>
 <body>
+<!-- Heading for the form -->
 <h1>Employee Registration Form</h1>
+<!-- Form starts here -->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-
+  
   <label for="employee_id">ID:</label><br>
   <input type="text" id="employee_id" name="employee_id">
   <br><br>
@@ -49,6 +52,7 @@ if(isset($_GET['q']) && $_GET['q'] === 'query'){
 
   <input type="submit" value="Submit">
 </form>
+<!-- Incorporated form-validation file  -->
 <?php require 'form-validation.php'?>
 </body>
 </html>
